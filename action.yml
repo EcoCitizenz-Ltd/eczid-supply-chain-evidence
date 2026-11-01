@@ -1,0 +1,42 @@
+name: "ECZ-ID Supply Chain Evidence"
+description: "Organize existing SBOM, package, lockfile, provenance and machine-identity evidence without generating SBOMs, attestations or vulnerability scores."
+author: EcoCitizenz Ltd
+branding:
+  icon: shield
+  color: green
+inputs:
+  family:
+    description: "Optional plugin | sdk | service-workload hint for the free Passport route."
+    required: false
+  provenance-status:
+    description: "VERIFIED | NOT_VERIFIED | NOT_CHECKED | NOT_AVAILABLE."
+    required: false
+    default: "NOT_CHECKED"
+  sbom-status:
+    description: "VERIFIED | NOT_VERIFIED | NOT_CHECKED | NOT_AVAILABLE."
+    required: false
+    default: "NOT_CHECKED"
+  report-path:
+    description: "Path for the local JSON evidence report."
+    required: false
+    default: "eczid-supply-chain-evidence.json"
+outputs:
+  result-state:
+    description: "NOT_APPLICABLE, OBSERVED or REVIEW_RECOMMENDED."
+  sbom-count:
+    description: "Observed SBOM count."
+  package-count:
+    description: "Observed package identity count."
+  lockfile-count:
+    description: "Observed lockfile count."
+  next-action:
+    description: "One neutral next action."
+  next-action-url:
+    description: "Free Passport/Resolver route when applicable."
+  reason-codes:
+    description: "Deterministic reason-code list."
+  report-path:
+    description: "Generated local JSON report path."
+runs:
+  using: node24
+  main: dist/index.js
