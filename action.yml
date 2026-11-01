@@ -1,5 +1,5 @@
 name: "ECZ-ID Supply Chain Evidence"
-description: "Organize existing SBOM, package, lockfile, provenance and machine-identity evidence without generating SBOMs, attestations or vulnerability scores."
+description: "Normalize existing SBOM, package, lockfile, provenance and machine-identity evidence without replacing scanners."
 author: EcoCitizenz Ltd
 branding:
   icon: shield
